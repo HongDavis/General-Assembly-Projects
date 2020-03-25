@@ -84,7 +84,9 @@ Perform the followings before performing NLP modeling.
 ---
 
 ### Data Source:
-Grouplens: https://grouplens.org/datasets/movielens/latest/
+Due to GitHub fize size limitation (file size must not > 100mb), the 1 million ratings dataset will be used. MovieLens 10M movie ratings. Stable benchmark dataset. 10 million ratings and 100,000 tag applications applied to 10,000 movies by 72,000 users. Released 1/2009. Zipped file size: 63MB
+
+Datasets from Grouplens: https://grouplens.org/datasets/movielens/1m/
 
 Full details about the datasets: https://grouplens.org/datasets/movielens/
 
