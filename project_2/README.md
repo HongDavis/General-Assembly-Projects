@@ -14,7 +14,7 @@ Data Source: https://www.kaggle.com/c/dsi-us-6-project-2-regression-challenge/da
 
 ### Contents:
 
-- [Exploratory Data Analysis](EDA)
+- [Exploratory Data Analysis](EDA) 
 - [Data Cleaning](#Data-Cleaning)
 - [Data Visualization](#Data-Visualization)
 - [Pre-processing](#Pre-processing)
