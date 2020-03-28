@@ -34,7 +34,7 @@ As there is no cure for WNV and the economic cost of WNV infection is high (USD$
 
 - [Data Import & Cleaning](#Data-Import-&-Cleaning)
 - [Preprocessing](#Preprocessing)
-- [EDA & Modeling](#EDA-&-Modeling)
+- [EDA & Modeling](#EDA-&-Modeling) 
 - [Evaluation and Conceptual Understanding](#Evaluation-and-Conceptual-Understanding)
 - [Conclusions and Recommendations](#Conclusions-and-Recommendations)
 ---
