@@ -37,12 +37,12 @@ Build and evaluate model's performance in recommending movies to user using cont
 ---
 
 ### Obtain Data
-Datasets with different sizes eg, small, 1M, 20M, etc. are available at Grouplens. This project is using the 1M datasets downloaded from Grouplens. Refer to links provided in the Data Source section below.
+Datasets with different sizes eg, small, 1M, 20M, etc. are available at Grouplens. This project uses the 1M datasets. Refer to links provided in the Data Source section at the end of this readme doc.
 
 ---
 
 ### Exploratory Data Analysis
-Movies and ratings are stored separately in movies and ratings file. About a million users ratings of movies can be found in the ratings dataset while close to 4,000 movies information is in the movies dataset. Different models will be used for recommender system including evaluation of each model. 
+Movies and ratings are stored separately in movies and ratings file. About a million users ratings of movies can be found in the ratings dataset while close to 4,000 movies information is in the movies dataset. Refer to the Data Visualization section below for more details. 
 
 ---
 
@@ -76,14 +76,15 @@ Hybrid recommender is a recommender that leverages both content and collaborativ
 ---
 
 ### Interpretation of Results
-recall@5	recall@10
-modelName		
-Popularity	0.384924	0.547870
-Collaborative Filtering	0.590706	0.739545
-Content-Based	0.169519	0.277652
-Hybrid	0.408239	0.460618
 
-A big surprise as the Collaborative Filtering turned out to be the best model according to metrics.
+| Model Name | recall@5 | recall@10 |
+| --- | --- | --- |
+| Popularity | 0.384924 | 0.547870 |
+| Collaborative Filtering | 0.590706 | 0.739545 |
+| Content-Based | 0.169519 | 0.277652 |
+| Hybrid | 0.408239 | 0.460618 |
+
+A big surprise as the Collaborative Filtering turned out to be better than the Hybrid model.
 
 ---
 
