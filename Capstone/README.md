@@ -113,7 +113,7 @@ Therefore, simply recommending users based on their browsing or purchasing histo
 
 #### One particular problem busines must be aware of is, cold-start issue. That is, a recommender system not being able to make recommendations to new users as there are no historical activities in the system. To overcome this, business can consider asking the user to provide information about their preferences on movies and genres during registration. This way, at least some information about the user's preference is captured for the recommender system to work with.
 
-#### Once the business has made a decision to more forward with the implementation, **A/B-testing** can be used to evaluate the effectiveness of the newly implemented recommeder system.  
+#### Once the business has made a decision to more forward with the implementation, **A/B-testing** can be used to evaluate the effectiveness of the newly implemented recommender system.  
 
 ---
 
