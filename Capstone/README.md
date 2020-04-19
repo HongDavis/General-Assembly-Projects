@@ -88,12 +88,17 @@ A big surprise as the Collaborative Filtering turned out to be better than the H
 
 ---
 
-### Business Recommendations:
-First and fore most before jumping into the band wagon and implement a recommender system blindly. In today days and age, it is no longer enough to just find out the pros and cons of the filtering approach*, a careful data scientist must also try to find out;
+## Business Recommendations:
+First and fore most before jumping into the band wagon to implement a recommender system blindly, we need to understand our products and what do want want to offer our users for eg, good shopping experience or just an In-Your-Face approach. There are plenty of recommender systems in the wild and different algorithm can be used under the hood each comes with pros and cons. Therefore, a good and careful data scientist must find out what algorithm is suitable for our product. Here are a few algorithms commonly used to power recommender system;
+**ALS (Alternating Least Square)** which is easy to implement, easy to understand, and not resource taxing.
+**KNN (K-Nearest Neigbor)** which is fast in the learning phase but slow in recall phase (the model is applied to new data). KNN is also called **Lazy Learners**.
+**Rule-Based algorithm** on the other hand is the opposite of KNN. It is expensive to update and train.
+**Matrix Factorization** is a matured field of ML. It is one of the commonly used algorithms. It is memory efficient and versatile eg, minimizing error using stichastic gradient descent or ALS technique, apply SVD (Singular Value Decompose) approach.
+**CCO (Correlated Cross Occurrence)** kinds of products are more likely to benefit from recommendations? Specifically, are mainstream products or niche projects more likely to benefit from recommendations?
 
-- What kinds of products are more likely to benefit from recommendations? Specifically, are mainstream products or niche projects more likely to benefit from recommendations?
+When choosing an algorithm, we have to be mindful how expensive to train and whether the model produces results that meet busines needs. Obviously, various algorithms can be combined or chained to together to get the desired results.
 
-- The other question is: What is it about a product that makes it more likely to elicit a response from a consumer when it’s recommended? For example, the ratings of the products or the price of the product or the type of the product — do they influence whether recommendations are effective for that product?
+Other question to ask is, what is it about a product that makes it more likely to elicit a response from a consumer when it’s recommended? For example, the ratings of the products or the price of the product or the type of the product — do they influence whether recommendations are effective for that product?
 
 There was a marketing research done by Kownledge @ Wharton highlighting the importance of; 
 https://knowledge.wharton.upenn.edu/article/recommended-for-you-how-well-does-personalized-marketing-work/
@@ -104,13 +109,11 @@ The article also mentioned some surprised findings "Now, another result that sur
 Therefore, simply recommending users based on their browsing or purchasing history/ habits, how similar their behavior to other users, etc, will risk losing the users because of boredom (always recommend the same stuff) and also losing potential sales eg, niche products that weren't shown to the user before. For eg, Amazon has thousands of products and only a small fractions of the products were exposed/ recommended to the users. Imagine a recommender systems capable of recommending products users has never seen before which the users may like. 
 <br><br>
 
-## Recommendation: Assuming all of the above cons have been taken care of, risks mitigated and based on the metric, business should implement Collaborative Filtering as the recommender system. 
+### Recommendation: All things being equal and based on the metrics, business should consider using the Collaborative Filtering as the recommender system. 
 
+#### One particular problem busines must be aware of is, cold-start issue. That is, a recommender system not being able to make recommendations to new users as there are no historical activities in the system. To overcome this, business can consider asking the user to provide information about their preferences on movies and genres during registration. This way, at least some information about the user's preference is captured for the recommender system to work with.
 
-* Here are some of the pros and cons of some of the recommender systems;
-- Item-Based Filtering: We only need to know the products users are viewing even though we don't know much about the user yet.
-- User-Based Filtering: Similar concept as item-based but susceptible to cold-start problem as user data is not yet available.
-- Content-Based Filtering: Works even when a product had no user reviews. Cons - requires descriptive data of all content to recommend which is time consuming.
+#### Once the business has made a decision to more forward with the implementation, **A/B-testing** can be used to evaluate the effective of the recommeder system.  
 
 ---
 
