@@ -6,15 +6,15 @@
 ## Executive Summary
 
 Problem Statement:
-A Recommender System refers to a system capable of predicting future preferences of a set of items for a user, and recommend something s/he likes (content based) or something preferred by other users with similar tastes (collaborative). In the past where brick and mortar is the norm, recommendations are usually made through word of mouth. However, with the internet, availability of large amount of data and fast computing power, recommendations not only can be done quickly but also fairly accurately. Recommendations are very common nowadays. Businesses especially those relying heavily or solely on online sales, recommender systems is a must and will greatly boost business growth or threathen the very survival of the business if it chosed not to implement one.
+A Recommender System (RS) refers to a system capable of predicting future preferences of a set of items for a user, and recommend something s/he likes (content based) or something preferred by other users with similar tastes (collaborative). In the past where brick and mortar is the norm, recommendations are usually made through word of mouth. However, with the internet, availability of large amount of data and fast computing power, recommendations not only can be done quickly but also fairly accurately. Recommendations are very common nowadays. Businesses especially those relying heavily or solely on online sales, RS is a must and will greatly boost business growth or threathen the very survival of the business if it chosed not to implement one.
 
-There are many type of recommender systems but in this movie recommender system project, the following 2 models will be used;
+There are many type of RSs but in this project, the following 2 models will be used;
 
-[Collaborative Recommendation Engine]
+[Collaborative Filtering]
 The user's ratings is the backbone for the basis for further suggestions in this type of recommendation engine.
 The collaborative recommendation is based on the history of user interactions with the platform and ratings users have given. For instance, if user A likes the same 5 movies as user B, user A will most likely also enjoy movies user B likes. In short, find users who are similar and recommend what they like (user-based). It is very resource taxing for user-to-user recommandations and slightly better for item-to-item recommendation.
 
-[Content-based Recommender System (similar items)]
+[Content-based Filtering]
 The content-based recommendation goes in a different direction from collaborative systems. Instead of focusing on the users' behavior, the content-based recommendation is built around the user's past behavior and likings. For example, if a user enjoys certain characteristics of movies (e.g. certain actors, genre, etc.), the user probably also enjoy other movies with those characteristics. Note this can easily be done using machine learning methods! Each movie can be decomposed into features. Then, for each user we compute a model -- the target can be a binary classifier (e.g. "LIKE"/"DISLIKE") or regression (e.g. star rating). The initial model is based on a simple non-machine learning model and the results will be compared with a machine learning based model. The machine learning model will be expected to produce better results. Although there are many users and movie titles but in reality, not all users give their ratings which in a way is good. This means, we can recommend movies to users. Instead of storing all users and movies in matrix which can be very huge and take up a lot of memory, we can store the ratings in a sparse matrix which requires far less memory.
 
 
@@ -89,7 +89,7 @@ A big surprise as the Collaborative Filtering turned out to be better than the H
 ---
 
 ## Business Recommendations:
-First and fore most before jumping into the band wagon to implement a recommender system blindly, we need to understand our products and what do want want to offer our users for eg, good shopping experience or just an In-Your-Face approach. There are plenty of recommender systems in the wild and different algorithm can be used under the hood each comes with pros and cons. Therefore, a good and careful data scientist must find out what algorithm is suitable for our product. Here are a few algorithms commonly used to power recommender system;
+First and fore most before jumping into the band wagon to implement a RS blindly, we need to understand our products and what do want want to offer our users for eg, good shopping experience or just an In-Your-Face approach. There are plenty of RSs out there and different algorithm can be used each comes with pros and cons. Therefore, it is imperative to understand which algorithm is suitable for the product in question. Here are a few algorithms commonly used in a RS;
 **ALS (Alternating Least Square)** which is easy to implement, easy to understand, and not resource taxing.
 **KNN (K-Nearest Neigbor)** which is fast in the learning phase but slow in recall phase (the model is applied to new data). KNN is also called **Lazy Learners**.
 **Rule-Based algorithm** on the other hand is the opposite of KNN. It is expensive to update and train.
@@ -109,11 +109,16 @@ The article also mentioned some surprised findings "Now, another result that sur
 Therefore, simply recommending users based on their browsing or purchasing history/ habits, how similar their behavior to other users, etc, will risk losing the users because of boredom (always recommend the same stuff) and also losing potential sales eg, niche products that weren't shown to the user before. For eg, Amazon has thousands of products and only a small fractions of the products were exposed/ recommended to the users. Imagine a recommender systems capable of recommending products users has never seen before which the users may like. 
 <br><br>
 
-### Recommendation: All things being equal and based on the metrics, business should consider using the Collaborative Filtering as the recommender system. 
+### Recommendation: All things being equal and based on the metrics, business should consider using the Collaborative Filtering as the RS. 
 
-#### One particular problem busines must be aware of is, cold-start issue. That is, a recommender system not being able to make recommendations to new users as there are no historical activities in the system. To overcome this, business can consider asking the user to provide information about their preferences on movies and genres during registration. This way, at least some information about the user's preference is captured for the recommender system to work with.
+#### One particular problem busines must be aware of is, cold-start issue. That is, a RS not being able to make recommendations to new users as there are no historical activities in the system. To overcome this, business can consider asking the user to provide information about their preferences on movies and genres during registration. This way, at least some information about the user's preference is captured for the RS to work with.
 
-#### Once the business has made a decision to more forward with the implementation, **A/B-testing** can be used to evaluate the effectiveness of the newly implemented recommender system.  
+#### After implementation, business can evaluate the effectiveness of the newly implemented RS by using;
+- A/B-testing or Multivariate testing.
+- Click-Through-Rate (CTR), Conversion Rate (CR) to measure KPIs. 
+- the good old Return On Investment (ROI) to measure performance but ROI calculations can be very fuzzy and depends on large number of unknowns.
+
+Last but not least, it is always a good idea to keep an eye on the churn rate and customer retention rate.
 
 ---
 
