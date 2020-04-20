@@ -31,9 +31,9 @@ The content-based recommendation goes in a different direction from collaborativ
 - [Exploratory Data Analysis](EDA)
 - [Data Cleaning](#Data-Cleaning)
 - [Modeling](#Modeling)
-- [Interpretation of Results](#Interpretation-of-Results)
+- [Evaluation](#Evaluation)
 - [Risk/ Limitations/ Assumptions Affecting Findings](#Risks/-Limitations/-Assumptions-Affecting-Findings)
-- [Business Recommendations](#Business-Recommendations)
+- [Business Recommendation](#Business-Recommendation)
 - [Data Source](#Data-Source)
 
 ---
@@ -77,8 +77,23 @@ Hybrid recommender is a recommender that leverages both content and collaborativ
 
 ---
 
-### Interpretation of Results
+### Evaluation
+Evaluation is important for machine learning projects, because it allows to compare objectively different algorithms and hyperparameter choices for models. We were able to evaluate the 4 models used in this project.
 
+A more robust evaluation approach could be to split train and test sets by a reference date, where the train set is composed by all interactions before that date, and the test set are interactions after that date. For the sake of simplicity, we chose the random approach for this project.
+
+In Recommender Systems, there are a set metrics commonly used for evaluation. We chose to work with Top-N accuracy metrics, which evaluates the accuracy of the top recommendations provided to a user, comparing to the items the user has actually interacted in test set. This evaluation method works as follows:
+
+- For each item the user has interacted in test set.
+- Sample 100 other items the user has never interacted.
+- Note: Here we naively assume those non interacted items are not relevant to the user, which might not be true, as the user may simply not be aware of those not interacted items. But let's keep this assumption.
+- Ask the recommender model to produce a ranked list of recommended items, from a set composed one interacted item and the 100 non-interacted ("non-relevant!) items.
+- Compute the Top-N accuracy metrics for this user and interacted item from the recommendations ranked list.
+- Aggregate the global Top-N accuracy metrics.
+
+The Top-N accuracy metric choosen was Recall@N which evaluates whether the interacted item is among the top N items (hit) in the ranked list of 101 recommendations for a user. Other popular ranking metrics are NDCG@N and MAP@N, whose score calculation takes into account the position of the relevant item in the ranked list (max. value if relevant item is in the first position). Check out http://fastml.com/evaluating-recommender-systems/ for more details.
+
+The below is a summary of the Top-N accuracy metric for the 4 models;
 | Model Name | recall@5 | recall@10 |
 | --- | --- | --- |
 | Popularity | 0.384924 | 0.547870 |
@@ -86,7 +101,9 @@ Hybrid recommender is a recommender that leverages both content and collaborativ
 | Content-Based | 0.169519 | 0.277652 |
 | Hybrid | 0.408239 | 0.460618 |
 
-A big surprise as the Collaborative Filtering turned out to be better than the Hybrid model.
+Collaborative Filtering (CF) turned out to be better than the Hybrid model. This is obvious because hybrid is the combination of collaborative and content-based. The extremely low score of content-based dampened the performance of the hybrid model.
+
+Generally, Matrix Factorization (MF) is quite efficient and accurate in predictions which explains why it is used by some of the common algorithms eg, ALS, SVD, etc and our CF model is using MF. In addition, the ratings datasets capture all ratings which is not the case in real live. Nonetheless, we can infer that movielens users are statisfied with the recommendations. 
 
 ---
 
