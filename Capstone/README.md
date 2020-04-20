@@ -3,6 +3,10 @@
 # Capstone Project: Recommender System
 
 
+## Objective
+Build and evaluate model's performance in recommending movies to user using content-based or collaborative model. We will start off with a simple non-machine learning model and see how it performs. We will then gradually build more advance models using ML and compare results to use the best model for our prediction.
+
+
 ## Executive Summary
 
 Problem Statement:
@@ -18,19 +22,17 @@ The collaborative recommendation is based on the history of user interactions wi
 The content-based recommendation goes in a different direction from collaborative systems. Instead of focusing on the users' behavior, the content-based recommendation is built around the user's past behavior and likings. For example, if a user enjoys certain characteristics of movies (e.g. certain actors, genre, etc.), the user probably also enjoy other movies with those characteristics. Note this can easily be done using machine learning methods! Each movie can be decomposed into features. Then, for each user we compute a model -- the target can be a binary classifier (e.g. "LIKE"/"DISLIKE") or regression (e.g. star rating). The initial model is based on a simple non-machine learning model and the results will be compared with a machine learning based model. The machine learning model will be expected to produce better results. Although there are many users and movie titles but in reality, not all users give their ratings which in a way is good. This means, we can recommend movies to users. Instead of storing all users and movies in matrix which can be very huge and take up a lot of memory, we can store the ratings in a sparse matrix which requires far less memory.
 
 
-## Objective
-Build and evaluate model's performance in recommending movies to user using content-based or collaborative model. We will start off with a simple non-machine learning model and see how it performs. We will then gradually build more advance models using ML and compare results to use the best model for our prediction.
-
 ---
 
 
-### Contents:
+### Contents
 
 - [Obtain Data](Obtain-Data)
 - [Exploratory Data Analysis](EDA)
 - [Data Cleaning](#Data-Cleaning)
 - [Modeling](#Modeling)
 - [Interpretation of Results](#Interpretation-of-Results)
+- [Risk/ Limitations/ Assumptions Affecting Findings](#Risks/-Limitations/-Assumptions-Affecting-Findings)
 - [Business Recommendations](#Business-Recommendations)
 - [Data Source](#Data-Source)
 
@@ -88,7 +90,7 @@ A big surprise as the Collaborative Filtering turned out to be better than the H
 
 ---
 
-## Business Recommendations:
+## Risk/ Limitations/ Assumptions Affecting Findings
 First and fore most before jumping into the band wagon to implement a RS blindly, we need to understand our products and what do want want to offer our users for eg, good shopping experience or just an In-Your-Face approach. There are plenty of RSs out there and different algorithm can be used each comes with pros and cons. Therefore, it is imperative to understand which algorithm is suitable for the product in question. Here are a few algorithms commonly used in a RS;
 **ALS (Alternating Least Square)** which is easy to implement, easy to understand, and not resource taxing.
 **KNN (K-Nearest Neigbor)** which is fast in the learning phase but slow in recall phase (the model is applied to new data). KNN is also called **Lazy Learners**.
@@ -109,7 +111,8 @@ The article also mentioned some surprised findings "Now, another result that sur
 Therefore, simply recommending users based on their browsing or purchasing history/ habits, how similar their behavior to other users, etc, will risk losing the users because of boredom (always recommend the same stuff) and also losing potential sales eg, niche products that weren't shown to the user before. For eg, Amazon has thousands of products and only a small fractions of the products were exposed/ recommended to the users. Imagine a recommender systems capable of recommending products users has never seen before which the users may like. 
 <br><br>
 
-### Recommendation: All things being equal and based on the metrics, business should consider using the Collaborative Filtering as the RS. 
+## Business Recommendation
+### All things being equal and based on the metrics, business should consider using the Collaborative Filtering as the RS. 
 
 #### One particular problem busines must be aware of is, cold-start issue. That is, a RS not being able to make recommendations to new users as there are no historical activities in the system. To overcome this, business can consider asking the user to provide information about their preferences on movies and genres during registration. This way, at least some information about the user's preference is captured for the RS to work with.
 
@@ -122,7 +125,7 @@ Last but not least, it is always a good idea to keep an eye on the churn rate an
 
 ---
 
-### Data Source:
+### Data Source
 Due to GitHub fize size limitation (file size must not > 100mb), the 1 million ratings dataset will be used.
 
 1M datasets from Grouplens: https://grouplens.org/datasets/movielens/1m/
