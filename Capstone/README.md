@@ -27,14 +27,15 @@ The content-based recommendation goes in a different direction from collaborativ
 
 ### Contents
 
-- [Obtain Data](Obtain-Data)
-- [Exploratory Data Analysis](EDA)
+- [Obtain Data](#Obtain-Data)
+- [Exploratory Data Analysis](#EDA)
 - [Data Cleaning](#Data-Cleaning)
 - [Modeling](#Modeling)
 - [Evaluation](#Evaluation)
 - [Risk/ Limitations/ Assumptions Affecting Findings](#Risks/-Limitations/-Assumptions-Affecting-Findings)
 - [Business Recommendation](#Business-Recommendation)
 - [Data Source](#Data-Source)
+- [Capstone Project Blog](#Capstone-Project-Blog)
 
 ---
 
@@ -152,3 +153,6 @@ Full details on all available datasets: https://grouplens.org/datasets/movielens
 Data dictionary: http://files.grouplens.org/datasets/movielens/ml-latest-README.html
 
 ---
+
+### Capstone Project Blog
+Head over to https://donutmypet.wordpress.com/2020/04/21/my-capstone-project-journey-at-dsi-13/ for a glimpse of my capstone journey.
